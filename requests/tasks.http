@@ -1,0 +1,24 @@
+###ALL
+GET     http://localhost:3000/api/books
+###ALL done : true
+GET     http://localhost:3000/api/books/done
+###ONE
+GET     http://localhost:3000/api/books/6598009b7bf2f96bba2b8d53
+###DELETE
+DELETE  http://localhost:3000/api/books/659800273bedece8af3e7619
+###CREATE
+POST    http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+    "title": "Lord of the Rings 2",
+    "description": "fantasy book",
+    "done": true
+}
+###UPDATE
+PUT http://localhost:3000/api/books/659800ac7bf2f96bba2b8d56
+Content-Type: application/json
+
+{
+    "author": "J.R.R. Tolkien"
+}
