@@ -2,7 +2,7 @@ import Book from '../models/Books.js'
 
 export const findAllBook = async (req, res) => {
     try{
-        const books = await Book.find();
+        const books = await Book.find().sort({title: 1});
         res.json(books);
     } catch (error) {
         res.status(500).json({
@@ -74,7 +74,7 @@ export const deleteBook = async (req, res) => {
 }
 
 export const findAllDoneBook = async (req, res) => { 
-    const books = await Book.find({done: true});
+    const books = await Book.find({done: true}).sort({title: 1});
     res.json(books)
 }
 
